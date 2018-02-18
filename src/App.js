@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Tickers from './component/Tickers.js';
+import Reactform from './component/Reactform.js';
 
 import logo from './logo.svg';
 import './App.css';
@@ -34,6 +35,7 @@ class App extends Component {
       <h2>mytestapp</h2>
       </div>
       <Tickers/>
+      <Reactform/>
       </div>
     );
   }

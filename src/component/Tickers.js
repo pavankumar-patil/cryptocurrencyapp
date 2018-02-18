@@ -43,9 +43,12 @@ import  Cryptocurrency from './Cryptocurrency.js'
         }
 
  fetchCryptocurrencyData() {
-       fetch("https://api.coinmarketcap.com/v1/ticker/?limit=10")
+       axios.get("https://api.coinmarketcap.com/v1/ticker/?limit=10")
             .then(response => {
-                console.log("response"+JSON.stringify(response));
+                
+                if(response.ok) {
+ console.log("response"+JSON.stringify(response));
+  }
                 var wanted = ["bitcoin", "ethereum", "litecoin"];
                 var result = response.data.filter(currency => wanted.includes(currency.id));
                 this.setState({ data: result});
