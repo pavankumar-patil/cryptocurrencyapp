@@ -1,19 +1,26 @@
 import React, { Component } from 'react';
 import Tickers from './component/Tickers.js';
 import Reactform from './component/Reactform.js';
-
+import { GoogleApiWrapper } from 'google-maps-react'
+import MapContainer from './component/MapContainer.js'
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor(props){
+  super(props);
+  alert(JSON.stringify(props));
 
+
+
+  }
     componentWillMount() {
       console.log('Component WILL MOUNT!')
    }
    componentDidMount() {
       console.log('Component DID MOUNT!')
    }
-   componentWillReceiveProps(newProps) {    
+   componentWillReceiveProps(newProps) {
       console.log('Component WILL RECIEVE PROPS!')
    }
    shouldComponentUpdate(newProps, newState) {
@@ -29,6 +36,7 @@ class App extends Component {
       console.log('Component WILL UNMOUNT!')
    }
   render() {
+
     return (
       <div className="App">
       <div className="App-header">
@@ -36,9 +44,12 @@ class App extends Component {
       </div>
       <Tickers/>
       <Reactform/>
+    <MapContainer google={this.props.google} /><MapContainer google={this.props.google} />
       </div>
     );
   }
 }
 
-export default App;
+export default GoogleApiWrapper({
+  apiKey: 'AIzaSyDrlh2mTuzgWFg3a_rSr1RWcI_BXZ7Qp-A',
+})(App);
