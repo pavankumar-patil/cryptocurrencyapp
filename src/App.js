@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import Tickers from './component/Tickers.js';
 import Reactform from './component/Reactform.js';
-import { GoogleApiWrapper } from 'google-maps-react'
-import MapContainer from './component/MapContainer.js'
+import { GoogleApiWrapper } from 'google-maps-react';
+import MapContainer from './component/MapContainer.js';
+import CommentListContainer from './component/CommentListContainer.js'
 import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
   constructor(props){
   super(props);
-  alert(JSON.stringify(props));
+//  alert(JSON.stringify(props));
 
 
 
@@ -45,6 +46,7 @@ class App extends Component {
       <Tickers/>
       <Reactform/>
     <MapContainer google={this.props.google} /><MapContainer google={this.props.google} />
+    <CommentListContainer/>
       </div>
     );
   }
