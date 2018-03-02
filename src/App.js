@@ -41,11 +41,11 @@ class App extends Component {
     return (
       <div className="App">
       <div className="App-header">
-      <h2>mytestapp</h2>
+<p>{{this.props.name}}</p>
       </div>
       <Tickers/>
       <Reactform/>
-    <MapContainer google={this.props.google} /><MapContainer google={this.props.google} />
+    <MapContainer google={this.props.google} />
     <CommentListContainer/>
       </div>
     );
